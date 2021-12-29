@@ -22,7 +22,7 @@ function uploadimg() {
 }
 
 //Write a code to grab the key-pressed 
-window.addEventListener("keydown",key_down);
+window.addEventListener("keydown",my_keydown);
 
 
 function my_keydown(e)
@@ -35,6 +35,19 @@ function my_keydown(e)
 			aplhabetkey();
 			document.getElementById("d1").innerHTML="You Pressed Alphabetic Key";
 			console.log("alphabetkey");
+		}     
+		else if(keyPressed>=48 && keyPressed<=57){
+			numberkey();
+			document.getElementById("d1").innerHTML="You Pressed Number Key";
+		}       
+		else if(keyPressed>=37 && keyPressed<=40){
+			arrowkey();
+			document.getElementById("d1").innerHTML="You Pressed Arrow Key";
+		} 
+		
+		else if(keyPressed==17||keyPressed==18||keyPressed==27){
+			specialkey();
+			document.getElementById("d1").innerHTML="You Pressed Special Key";
 		}
 		//write a code to check the type of key pressed
 
@@ -47,7 +60,7 @@ function my_keydown(e)
 function aplhabetkey()
 {
 	//upload respective image with the message. 
-	img_image="Alpkey";
+	img_image="Alpkey.png";
      add();
 }
 function numberkey()
